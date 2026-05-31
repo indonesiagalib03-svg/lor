@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Birthday My Love ❤️</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  font-family:'Segoe UI',sans-serif;
+}
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+  overflow:hidden;
+}
+.page{
+  display:none;
+  text-align:center;
+  background:white;
+  padding:40px;
+  border-radius:20px;
+  width:90%;
+  max-width:420px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.2);
+}
+.page.active{
+  display:block;
+}
+h1,h2{
+  color:#ff4b6e;
+}
+button{
+  margin:10px;
+  padding:12px 28px;
+  border:none;
+  border-radius:30px;
+  font-size:16px;
+  cursor:pointer;
+  transition:0.2s;
+}
+button:hover{
+  transform:scale(1.08);
+}
+.yes{
+  background:#ff4b6e;
+  color:white;
+}
+.no{
+  background:#ccc;
+}
+.warning{
+  margin-top:15px;
+  color:red;
+  font-weight:bold;
+}
+
+/* Paper Plane Animation */
+.paper{
+  width:180px;
+  height:120px;
+  background:white;
+  margin:40px auto;
+  animation:fold 2s forwards, fly 2s 2s forwards;
+}
+@keyframes fold{
+  0%{transform:scale(1);}
+  100%{transform:scale(0.7) rotate(10deg);}
+}
+@keyframes fly{
+  0%{transform:translate(0,0);opacity:1;}
+  100%{transform:translate(400px,-300px) rotate(30deg);opacity:0;}
+}
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="page active" id="page1">
+  <h2>Do you love me? ❤️</h2>
+  <button class="yes" onclick="goPage2()">Yes</button>
+  <button class="no" onclick="warn1()">No</button>
+  <div class="warning" id="warn1"></div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page" id="page2">
+  <h2>Do you know that I love you more than you? 💖</h2>
+  <button class="yes" onclick="startAnimation()">Yes</button>
+  <button class="no" onclick="warn2()">No</button>
+  <div class="warning" id="warn2"></div>
+</div>
+
+<!-- ANIMATION PAGE -->
+<div class="page" id="animationPage">
+  <div class="paper"></div>
+  <p>Flying to wish ✈️❤️</p>
+</div>
+
+<!-- MAIN BIRTHDAY PAGE -->
+<div class="page" id="mainPage">
+  <h1>🎉 Happy Birthday My Love 🎉</h1>
+  <p>
+  
+    Happy Birthday Saria (my love)
+
+First of all tomake thanks je  tumi amr life e ascho and aso. tumi jano saria after rltn amr kmn jni ager moto oi lonely feel ba boring feel ta ar ase na ...tomar ekta normal msg eo ami kmnn jani happy hoia jai..even tumi amr sathe rudely kotha bolleo amr kmn jani kharap lagena,,,,eta kno hoy ami Janina....majhe majhe tumar kothay ami kosto paileo ....ami nije nijei thikhoye jai... cuz amr gf er amar sathe rudely kotha bolar right ase ar ami etai cahi...then tumi je bacchar moto thako ba behave koro ...bissas koro i love thiss saria...ar tumi to baacchai......ar hocche majhe majhe ami ektu rege gele  tomar sathe ektu rudly behave kori...tar jonno ami sorry...kichu mone korba na okayeyyii...ar saruuu jotoi ja hok na keno ami toamke always ei chetabo 😈😝...eta theke amake sorate parba na baby ....tomake chetaite na parle amr kmn jani sas kosto hoy ...so chetaboi ami ...ekhane tumi na korleo ami sunbo na babes...
+vai sotti kotha bolle tumake chetle ja cute lage ta bolar bahire
+and allah raste amr upor kono bisoye rag korle ba overthink korle amake ektu boilo🙏🙏
+
+tomar jonno dua kori tomar samner din gula jono sob somoy valo vabe, santite , jhamela chara katao ...valo moto pora suna koro ..samnr year ei ssc. 
+ar atleast namaj ta poiro 🙏🙏
+  </p>
+</div>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page')
+    .forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+function goPage2(){
+  showPage('page2');
+}
+function warn1(){
+  document.getElementById('warn1').innerText =
+  "Soitan No press koro keno ..ekhaneo bolo valo baso na ..mair dibo .. yess press koro..";
+}
+function warn2(){
+  document.getElementById('warn2').innerText =
+  "ehhh...aise...besi bujho...ami tomake tomar theke besi love kori..yess chapooooo!!!";
+}
+function startAnimation(){
+  showPage('animationPage');
+  setTimeout(()=>{
+    showPage('mainPage');
+  },4000);
+}
+</script>
+
+</body>
+</html>
